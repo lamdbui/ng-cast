@@ -2,8 +2,6 @@
 // This is an example response from the YouTube Search API
 // when searching with the query 'angularjs tutorial'
 
-window.lam = 'moo';
-
 window.exampleVideoData = [{
   kind: "youtube#searchResult",
   etag: "uQc-MPTsstrHkQcRXL3IWLmeNsM/C1jcavqo18Eddpnx0P7g42ER6yk",
