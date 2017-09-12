@@ -3,8 +3,13 @@ angular.module('video-player')
     controller: function(youTube) {
       this.videos = exampleVideoData;
       this.currentVideo = this.videos[0];
+
       this.selectVideo = selectedVideo => {
         this.currentVideo = selectedVideo;
+      };
+
+      this.setVideos = newVideos => {
+        this.videos = newVideos;
       };
 
       // make sure we bind so we ensure this gets called with the current context
