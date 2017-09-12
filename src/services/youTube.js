@@ -1,7 +1,7 @@
 angular.module('video-player')
-  .service('youTube',function($http) {
+  .service('youTube', function($http) {
     this.getVideos = function() {
-      $http({
+      return $http({
         method: 'GET',
         url: `https://www.googleapis.com/youtube/v3/search`,
         params: {
@@ -12,12 +12,13 @@ angular.module('video-player')
           type: 'video',
           videoEmbeddable: true
         }
-      }).then(function(resolve) {
-        console.log('RESOLVE:', resolve.data.items);
-        //this.setVideos(resolve.data);
-        return resolve.data.items;
-      }, function(reject) {
-        console.log('REJECT:', reject.data);
       });
+      // .then(function(resolve) {
+      //   console.log('RESOLVE:', resolve.data.items);
+      //   //this.setVideos(resolve.data);
+      //   return resolve.data.items;
+      // }, function(reject) {
+      //   console.log('REJECT:', reject.data);
+      // });
     };
   });
