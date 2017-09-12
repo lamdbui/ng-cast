@@ -1,9 +1,9 @@
 angular.module('video-player')
   .component('app', {
-    controller: function() {
+    controller: function(youTube) {
       this.videos = exampleVideoData;
       this.currentVideo = this.videos[0];
-      this.selectVideo = function(selectedVideo) {
+      this.selectVideo = selectedVideo => {
         this.currentVideo = selectedVideo;
       };
 
