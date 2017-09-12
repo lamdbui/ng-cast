@@ -8,12 +8,12 @@ angular.module('video-player')
       var that = this;
       this.inputText = '';
       this.handleKeyPress = (event) => {
-        if (event.key === "Enter") {
+        if (event.key === 'Enter') {
           this.getVideos();
         }
       };
       this.getVideos = () => {
-        youTube.getVideos(that.inputText).then(
+        youTube.search(that.inputText).then(
           function(resolve) {
             that.setVideosCallback(resolve.data.items);
           },
