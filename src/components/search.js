@@ -4,15 +4,16 @@ angular.module('video-player')
       setVideosCallback: '<'
     },
     controller: function(youTube) {
+      // reference to the correct object for the callback
       var that = this;
+      this.inputText = '';
       this.getVideos = () => {
-        youTube.getVideos().then(
+        youTube.getVideos(that.inputText).then(
           function(resolve) {
-            console.log('RESOLVE:', resolve.data.items);
             that.setVideosCallback(resolve.data.items);
           },
           function(reject) {
-            console.log('REJECT:', resolve.data.items);
+            console.log('REJECT:', reject);
           }
         );
       };
