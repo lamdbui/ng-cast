@@ -10,6 +10,7 @@ angular.module('video-player')
 
       this.setVideos = newVideos => {
         this.videos = newVideos;
+        this.currentVideo = this.videos[0];
       };
 
       // make sure we bind so we ensure this gets called with the current context

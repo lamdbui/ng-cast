@@ -7,6 +7,11 @@ angular.module('video-player')
       // reference to the correct object for the callback
       var that = this;
       this.inputText = '';
+      this.handleKeyPress = (event) => {
+        if (event.key === "Enter") {
+          this.getVideos();
+        }
+      };
       this.getVideos = () => {
         youTube.getVideos(that.inputText).then(
           function(resolve) {
